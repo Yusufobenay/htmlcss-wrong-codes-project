@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Rota | Butik Seyahat Stüdyosu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">Atlas<span>Rota</span></a>
+      <nav>
+        <ul class="navbar__links">
+          <li><a href="#anasayfa">Anasayfa</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#rotalar">Rotalar</a></li>
+          <li><a href="#yorumlar">Yorumlar</a></li>
+          <!-- BUG: kapanmamış tırnak işareti, bu satırdan sonraki tüm HTML'i bozar -->
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="anasayfa">
+    <!-- BUG: img etiketinde alt özniteliği eksik (erişilebilirlik hatası) -->
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80" alt="Doğa Manzarasi" class="hero__bg">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="eyebrow">03 KIŞI · 14 GÜN · 2 KITA</p>
+      <h1>Haritanın<br>Dışına Çık</h1>
+      <p class="hero__desc">Atlas Rota, kalabalık turlardan uzak, gerçek rotalarda küçük gruplarla ilerleyen bir keşif stüdyosudur.</p>
+      <a href="#rotalar" class="btn btn-primary">Rotaları Keşfet</a>
+    </div>
+  </section>
+
+  <!-- ============ HAKKIMIZDA ============ -->
+  <section class="about" id="hakkimizda">
+    <div class="container about__grid">
+      <!-- BUG: bu div hiç kapatılmıyor, sayfanın geri kalanının yerleşimini bozar -->
+      <div class="about__image">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=900&q=80" alt="Dağ yolunda yürüyen gezginler">
+</div>
+      <div class="about__text">
+        <span class="label">01 — Biz Kimiz</span>
+        <h2>Rehberlik değil, rota ortaklığı</h2>
+        <p>10 yıldır Anadolu'dan And Dağları'na, gezginleri sadece taşımıyor; her rotayı birlikte kurguluyoruz. Ekibimiz dağcılık, fotoğrafçılık ve yerel tarih üzerine uzmanlaşmış rehberlerden oluşuyor.</p>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num">37</span>
+            <span class="stat__label">Ülke</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">212</span>
+            <span class="stat__label">Rota</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">4.9</span>
+            <span class="stat__label">Ortalama Puan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROTALAR ============ -->
+  <section class="routes" id="rotalar">
+    <div class="container">
+      <span class="label">02 — Rotalar</span>
+      <h2 class="section-title">Bu sezon öne çıkanlar</h2>
+
+      <div class="routes__grid">
+
+        <article class="route-card">
+          <span class="stamp">TR · 04</span>
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="Dağ gölü manzarası">
+          <div class="route-card__body">
+            <h3>Kaçkar Geçidi</h3>
+            <p>7 gün · Zorlu</p>
+          </div>
+        </article>
+
+        <article class="route-card">
+          <span class="stamp">PE · 11</span>
+          <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80" alt="Sisli dağ manzarası">
+          <div class="route-card__body">
+            <h3>And Yaylaları</h3>
+            <p>12 gün · Zorlu</p>
+          </div>
+        </article>
+
+        <article class="route-card">
+          <span class="stamp">MA · 02</span>
+          <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=800&q=80" alt="Çöl yolu">
+          <div class="route-card__body">
+            <h3>Sahra Rotası</h3>
+            <p>9 gün · Orta</p>
+          </div>
+        </article>
+
+        <article class="route-card">
+          <span class="stamp">FI · 07</span>
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Orman patikası">
+          <div class="route-card__body">
+            <h3>Kuzey Ormanları</h3>
+            <p>5 gün · Kolay</p>
+          </div>
+        </article>
+
+        <article class="route-card">
+          <span class="stamp">JP · 09</span>
+          <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80" alt="Şehir sokağı">
+          <div class="route-card__body">
+            <h3>Kyoto Patikaları</h3>
+            <p>8 gün · Orta</p>
+          </div>
+        </article>
+
+        <article class="route-card">
+          <span class="stamp">NZ · 13</span>
+          <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80" alt="Dağ tırmanışı">
+          <div class="route-card__body">
+            <h3>Güney Adası</h3>
+            <p>14 gün · Zorlu</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YORUMLAR ============ -->
+  <section class="testimonials" id="yorumlar">
+    <div class="container">
+      <span class="label">03 — Yorumlar</span>
+      <h2 class="section-title">Gezginlerimiz ne diyor</h2>
+
+      <div class="testimonials__grid">
+        <blockquote class="testimonial">
+          <!-- BUG: etiketler çapraz kapatılmış: <strong><em> ... </strong></em> -->
+          <p>Bu rotada her gün <strong><em>gerçekten unutulmaz</em></strong> bir şey oldu.</p>
+          <cite>— Deniz A.</cite>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <p>Grup küçüktü, rehberler harikaydı. Kesinlikle tavsiye ederim.</p>
+          <cite>— Mert K.</cite>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <p>Fotoğraf molaları için ayrılan zaman fark yaratıyor.</p>
+          <cite>— Elif S.</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ İLETİŞİM ============ -->
+  <section class="contact" id="iletisim">
+    <div class="container contact__grid">
+      <div class="contact__text">
+        <span class="label">04 — İletişim</span>
+        <h2>Bir sonraki rota senin</h2>
+        <p>Sorularını yaz, 24 saat içinde dönüş yapalım.</p>
+      </div>
+
+      <form class="contact__form">
+        <label for="name">Ad Soyad</label>
+        <input type="text" id="name" name="name" placeholder="Adın Soyadın">
+
+        <label for="email">E-posta</label>
+        <!-- BUG: name özniteliği eksik, form verisi düzgün gönderilmez -->
+        <input type="email" id="email" name="email" placeholder="ornek@mail.com">
+
+        <label for="message">Mesaj</label>
+        <textarea id="message" name="message" placeholder="Rota hakkında ne merak ediyorsun?"></textarea>
+
+        <button type="submit" class="btn btn-primary">Gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Atlas Rota</span>
+      <span>İstanbul, Türkiye</span>
+    </div>
+  </footer>
+
+</body>
+</html>

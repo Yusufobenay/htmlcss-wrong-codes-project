@@ -1,0 +1,366 @@
+/* =========================================================
+   ATLAS ROTA — style.css
+   Tasarım tokenları: renk, tipografi, boşluk
+   ========================================================= */
+
+:root {
+  --ink: #1B1B1B;
+  --forest: #16423C;
+  --forest-light: #23594F;
+  --sand: #F7F3EC;
+  --gold: #C9A227;
+  --clay: #A65A34;
+  --white: #FFFFFF;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --container: 1120px;
+  --radius: 4px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sand);
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--forest);
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--gold);
+  /* BUG 5: "colr" gecerli bir CSS ozelligi degil, "color" olmali.
+     Buton metni gorunmez / varsayilan renkte kalir. */
+  color: #fff;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  /* BUG 13: "z-idnex" yazim hatasi, dogrusu "z-index".
+     Navbar diger icerigin altinda kalabilir. */
+  z-index: 10;
+  background: var(--sand);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 18px 0;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.navbar__logo span { color: var(--forest); }
+
+.navbar__links {
+  list-style: none;
+  gap: 28px;
+  /* BUG 7: "dispaly" yazim hatasi, dogrusu "display".
+     Menu ogeleri yan yana degil alt alta gorunur. */
+  display: flex;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* =========================================================
+   RESPONSIVE — 768px ALTI
+   BUG 8: Bu media query kapanis suslu parantezini { ... }
+   almiyor. Bundan sonraki TUM kurallar bu media query'nin
+   icine hapsolur ve sadece dar ekranlarda calisir.
+   ========================================================= */
+@media (max-width: 768px) {
+  .navbar__links {
+    gap: 16px;
+    font-size: 13px;
+  }
+  }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,27,27,0.15) 0%, rgba(27,27,27,0.75) 100%);
+}
+
+.hero__content {
+  position: relative;
+  color: var(--white);
+  padding-bottom: 72px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 76px);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.hero__desc {
+  max-width: 480px;
+  margin-bottom: 28px;
+  font-size: 17px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about { padding: 120px 0; }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about__image img { border-radius: var(--radius); }
+
+.about h2 { font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 18px; }
+
+.about__text p { max-width: 46ch; color: #444; }
+
+.about__stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.stat__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--forest);
+}
+
+.stat__label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #666;
+}
+
+/* =========================================================
+   ROTALAR — bento grid
+   ========================================================= */
+
+.routes { padding: 120px 0; background: var(--white); }
+
+.routes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.route-card {
+  position: relative;
+  background: var(--sand);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.route-card img { height: 220px; object-fit: cover; }
+
+.route-card__body {
+  /* BUG 6: "20" birimsiz, gecerli bir CSS uzunluk degeri degil.
+     Dogrusu "20px". Padding uygulanmaz. */
+  padding: 20px;
+}
+
+.route-card__body h3 {
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+
+.route-card__body p {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #777;
+}
+
+.stamp {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--forest);
+  /* BUG 9: "#12x45" gecersiz bir hex renk kodu (x karakteri
+     hex'te yok). Rozetin arka plani uygulanmaz. */
+  background: var(--sand);
+  border: 1px solid var(--forest);
+  border-radius: 999px;
+  padding: 6px 12px;
+  transform: rotate(6deg);
+}
+
+/* =========================================================
+   YORUMLAR
+   ========================================================= */
+
+.testimonials { padding: 120px 0; }
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial {
+  background: var(--white);
+  border-left: 3px solid var(--gold);
+  padding: 28px;
+}
+
+.testimonial p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.testimonial cite {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #777;
+  font-style: normal;
+}
+
+/* =========================================================
+   ILETISIM
+   ========================================================= */
+
+/* BUG 11: "background" degerinden sonra noktali virgul unutulmus.
+   Tarayici bunu "background: var(--forest) color: var(--white)"
+   olarak tek bir (gecersiz) deger sanir; hem arka plan hem de
+   yazi rengi uygulanmaz. */
+.contact { padding: 120px 0; background: var(--forest); color: var(--white); }
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.contact__text h2 { color: var(--white); margin-bottom: 12px; }
+
+.contact__form { display: flex; flex-direction: column; gap: 10px; }
+
+.contact__form label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.contact__form input,
+.contact__form textarea {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  color: var(--white);
+  font-family: var(--font-body);
+}
+
+.contact__form textarea { min-height: 110px; resize: vertical; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer { padding: 28px 0; }
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #666;
+}
